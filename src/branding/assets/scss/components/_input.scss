@@ -1,0 +1,78 @@
+@mixin input() {
+    .px-input {
+        display: flex;
+        flex-direction: column;
+        .px-input__text {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: fit-content;
+            cursor: pointer;
+            border-radius: 4px;
+            background-color: var(--input-bg-color, grey);
+            .icon {
+                display: none;
+            }
+
+            &.success {
+                --input-bdr-color: green;
+            }
+
+            &.error {
+                --input-bdr-color: red;
+            }
+
+            &:hover {
+                input:not(:placeholder-shown) {
+                    display: block;
+                }
+            }
+
+            .icon-rt {
+                left: 8px;
+                --icon-hw: 12px;
+            }
+
+            input {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+                    "Open Sans", "Helvetica Neue", sans-serif;
+                font-size: 12px;
+                color: var(--input-text-color, navy);
+                background: var(--input-bg, lightgray);
+                width: 100%;
+                height: 40px;
+                outline: none;
+                padding: 0 8px;
+                border: 1px solid var(--input-bdr-color, gray);
+                border-width: 1px;
+                border-radius: 4px;
+                &:disabled {
+                    --input-text-color: lightgrey;
+                    --input-bg: lightgrey;
+                    --input-bdr-color: lightgrey;
+                    opacity: 0.2;
+                    pointer-events: none;
+                }
+                &::placeholder {
+                    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+                    color: lightblue;
+                    font-size: 10px;
+                }
+
+                &:hover {
+                    &:not(:focus) {
+                        --input-bdr-color: lightblue;
+                    }
+                }
+
+                &:focus {
+                    outline: 2px solid skyblue;
+                    outline-offset: 2px;
+                }
+            }
+        }
+    }
+}
+
+@include input();
