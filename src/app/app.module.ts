@@ -3,17 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { commonModule } from './common/common.module';
+import { SidenavComponent } from './layout/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SidenavComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    commonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
